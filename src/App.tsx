@@ -29,14 +29,14 @@ function ContainerExample() {
   return (
     <Container>
       <Row>
-        <Col xs={12}>
+        <Col lg={6} xs={12}>
           <TodayWeather
             data={weatherData}
             loading={loading}
             error={weatherDataError}
           />
         </Col>
-        <Col xs={12}>
+        <Col lg={6} xs={12}>
           <HourlyForcast
             data={hourlyData}
             loading={hourlyDataLoading}
