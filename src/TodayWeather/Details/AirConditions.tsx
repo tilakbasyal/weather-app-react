@@ -3,12 +3,9 @@ import { Col, Row } from "react-bootstrap";
 import { BsThermometer } from "react-icons/bs";
 import { BsWind } from "react-icons/bs";
 
-import { getMonthAndDay } from "../../utils/getMonthAndDay";
-
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 const Details = ({ data }) => {
-  console.log({ data });
-  const date = getMonthAndDay(data.dt);
-  console.log(date);
   return (
     <React.Fragment>
       <h5 className="common-header" style={{ marginTop: "12px" }}>

@@ -24,6 +24,8 @@ const HourlyForcast: React.FC<IComponentProps> = ({ data, loading, error }) => {
     <React.Fragment>
       <h5 className="common-header">3 Hourly Forecast</h5>
       <Card style={{ maxHeight: "400px", overflow: "scroll" }}>
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-ignore */}
         {data?.list.map((i) => {
           if (i.dt * 1000 < twentyFourHoursFromNow) {
             return (

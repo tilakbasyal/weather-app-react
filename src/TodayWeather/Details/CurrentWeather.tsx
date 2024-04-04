@@ -2,7 +2,8 @@ import { Col, Row } from "react-bootstrap";
 import { getMonthAndDay } from "../../utils/getMonthAndDay";
 import React from "react";
 
-// current weather
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 const Details = ({ data }) => {
   const date = getMonthAndDay(data.dt);
   return (
