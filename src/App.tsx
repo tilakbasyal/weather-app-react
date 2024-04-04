@@ -8,6 +8,7 @@ import useWeather from "./hooks/useWeather";
 import TodayWeather from "./TodayWeather";
 import HourlyForcast from "./HourlyForecast";
 import useHourlyWeatherData from "./hooks/useHourlyData";
+import useUserLocation from "./hooks/useLocation";
 
 function ContainerExample() {
   const { weatherData, loading, error: weatherDataError } = useWeather();
@@ -16,6 +17,14 @@ function ContainerExample() {
     loading: hourlyDataLoading,
     error: hourlyDataError,
   } = useHourlyWeatherData();
+
+  const { error } = useUserLocation();
+
+  console.log("ERROR", error);
+
+  if (error) {
+    return <p style={{ textAlign: "center" }}>{error}</p>;
+  }
 
   return (
     <Container>
