@@ -26,9 +26,10 @@ body {
   color: white;
   margin: 0;
   display: grid;
-  place-items: center;
-  min-width: 320px;
+  align-items: center;
+  /* min-width: 320px; */
   min-height: 100vh;
+  font-family: "Lato", sans-serif;
   background: linear-gradient(180deg, #000428, #004e92);
 }
 

@@ -1,32 +1,32 @@
+import { Col, Row } from "react-bootstrap";
 import { getMonthAndDay } from "../../utils/getMonthAndDay";
+import React from "react";
 
 // current weather
 const Details = ({ data }) => {
-  console.log({ data });
   const date = getMonthAndDay(data.dt);
-  console.log(date);
   return (
-    <div>
-      <h4>Current Weather</h4>
-      <div style={{ display: "flex" }}>
-        <div style={{ paddingLeft: 12 }}>
-          <h4 style={{ margin: 0 }}>{data.name}</h4>
-          <p style={{ margin: 0 }}>{date}</p>
-        </div>
+    <React.Fragment>
+      <h5 className="common-header">Current Weather</h5>
+      <Row>
+        <Col lg={6}>
+          <h5>{data.name}</h5>
+          <p>{date}</p>
+        </Col>
 
-        <div style={{ paddingLeft: 12 }}>
-          <h4 style={{ margin: 0 }}>{data.main.temp}</h4>
-          <p style={{ margin: 0 }}>{data.weather[0].description}</p>
-        </div>
+        <Col lg={4}>
+          <h5>{data.main.temp}</h5>
+          <p>{data.weather[0].description}</p>
+        </Col>
 
-        <div style={{ paddingLeft: 12 }}>
+        <Col lg={2}>
           <img
             src={`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`}
             alt={data.weather[0].description}
           />
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </React.Fragment>
   );
 };
 

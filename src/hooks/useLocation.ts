@@ -28,12 +28,11 @@ const useUserLocation = () => {
 
     getLocation();
 
-    // Clean up
     return () => {
       setLocation(null);
       setError(null);
     };
-  }, []); // Empty dependency array to ensure effect runs only once
+  }, []);
 
   return { location, error };
 };
