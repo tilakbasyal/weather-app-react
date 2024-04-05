@@ -10,9 +10,8 @@ const useHourlyWeatherData = () => {
     const fetchData = async () => {
       if (location) {
         try {
-          const API_KEY = "6b1bd2e032cb520cf83df5be3fceee75";
           const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/forecast?lat=${location.latitude}&lon=${location.longitude}&appid=${API_KEY}&units=metric`
+            `https://api.openweathermap.org/data/2.5/forecast?lat=${location.latitude}&lon=${location.longitude}&appid=${process.env.API_KEY}&units=metric`
           );
           const data = await response.json();
           setHourlyData(data);
