@@ -15,7 +15,11 @@ const twentyFourHoursFromNow = Date.now() + 24 * 60 * 60 * 1000;
 
 const HourlyForcast: React.FC<IComponentProps> = ({ data, loading, error }) => {
   if (loading) {
-    return <Spinner />;
+    return (
+      <div style={{ display: "grid", placeItems: "center" }}>
+        <Spinner />
+      </div>
+    );
   }
   if (error) {
     return <ErrorComponent />;
@@ -37,17 +41,17 @@ const HourlyForcast: React.FC<IComponentProps> = ({ data, loading, error }) => {
                   {i?.weather[0].description}{" "}
                 </span>
                 <Row>
-                  <Col md={3} style={{ textAlign: "center" }}>
+                  <Col xs={3} style={{ textAlign: "center" }}>
                     <BsThermometer />
                     {Math.round(i?.main.feels_like)} °C
                   </Col>
-                  <Col md={3} style={{ textAlign: "center" }}>
+                  <Col xs={3} style={{ textAlign: "center" }}>
                     <BsWind /> {i?.wind.speed} m/s
                   </Col>
-                  <Col md={3} style={{ textAlign: "center" }}>
+                  <Col xs={3} style={{ textAlign: "center" }}>
                     <BsDropletHalf /> {i?.main.humidity} %
                   </Col>
-                  <Col md={3} style={{ textAlign: "center" }}>
+                  <Col xs={3} style={{ textAlign: "center" }}>
                     <BsCloudsFill /> {i?.clouds.all} %
                   </Col>
                 </Row>

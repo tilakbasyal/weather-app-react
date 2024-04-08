@@ -20,8 +20,6 @@ function ContainerExample() {
 
   const { error } = useUserLocation();
 
-  console.log("ERROR", error);
-
   if (error) {
     return <p style={{ textAlign: "center" }}>{error}</p>;
   }

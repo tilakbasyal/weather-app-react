@@ -10,17 +10,17 @@ const Details = ({ data }) => {
     <React.Fragment>
       <h5 className="common-header">Current Weather</h5>
       <Row>
-        <Col lg={6}>
+        <Col xs={6}>
           <h5>{data.name}</h5>
           <p>{date}</p>
         </Col>
 
-        <Col lg={4}>
+        <Col xs={4}>
           <h5>{data.main.temp}</h5>
           <p>{data.weather[0].description}</p>
         </Col>
 
-        <Col lg={2}>
+        <Col xs={2}>
           <img
             src={`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`}
             alt={data.weather[0].description}

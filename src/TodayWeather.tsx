@@ -8,7 +8,11 @@ import { IComponentProps } from "./types";
 
 const TodayWeather: React.FC<IComponentProps> = ({ data, loading, error }) => {
   if (loading) {
-    return <Spinner />;
+    return (
+      <div style={{ display: "grid", placeItems: "center" }}>
+        <Spinner />
+      </div>
+    );
   }
   if (error) {
     return <ErrorComponent />;
