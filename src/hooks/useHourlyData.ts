@@ -11,7 +11,11 @@ const useHourlyWeatherData = () => {
       if (location) {
         try {
           const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/forecast?lat=${location.latitude}&lon=${location.longitude}&appid=${process.env.API_KEY}&units=metric`
+            `https://api.openweathermap.org/data/2.5/forecast?lat=${
+              location.latitude
+            }&lon=${location.longitude}&appid=${
+              import.meta.env.VITE_API_KEY
+            }&units=metric`
           );
           const data = await response.json();
           setHourlyData(data);
