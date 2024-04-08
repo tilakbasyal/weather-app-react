@@ -32,6 +32,8 @@ const useWeatherData = () => {
   const [weatherData, setWeatherData] = useState<IWeatherData>(initialState);
   const [loading, setLoading] = useState(true);
 
+  console.log("test", import.meta.env.VITE_API_KEY, process.env.VITE_API_KEY);
+
   useEffect(() => {
     const fetchData = async () => {
       if (location) {
